@@ -1,0 +1,14 @@
+def pick_and_place():
+  home = [0, -1.57, 0, -1.57, 0, 0]  # home position
+  pick_pos = p[0.3, -0.3, 0.2, 0, 3.14, 0]  # pick position
+  place_pos = p[0.3, 0.3, 0.2, 0, 3.14, 0]  # place position
+  
+  movej(home, a=1.2, v=0.5)        # move to home
+  movel(pick_pos, a=0.5, v=0.1)    # move to pick
+  sleep(1.0)                        # simulate grip
+  movel(place_pos, a=0.5, v=0.1)   # move to place
+  sleep(1.0)                        # simulate release
+  movej(home, a=1.2, v=0.5)        # return home
+end
+
+pick_and_place()
